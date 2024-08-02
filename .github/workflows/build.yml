@@ -24,12 +24,13 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
- 
+      
+      - name: Install fuse
+        run: sudo apt install fuse
+
       # Runs a set of commands using the runners shell
       - name: Build app image
         working-directory: ./
-        run: |
-          apt get update
-          apt install fuse
+        run: |  
           chmod +x ./deb2appimage.appimage
           ./deb2appimage.appimage -j ./webapp-manager.json -o ./out
