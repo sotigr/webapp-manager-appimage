@@ -27,6 +27,7 @@ jobs:
  
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
+        working-directory: ./
         run: |
-          chmod +x deb2appimage.appimage,
+          chmod +x ./deb2appimage.appimage
           ./deb2appimage.appimage -j ./webapp-manager.json -o ./out
