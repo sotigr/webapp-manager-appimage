@@ -1,0 +1,52 @@
+{
+    "buildinfo": [
+    {
+        "prerun": [
+            "mkdir -p ~/.cache/deb2appimage/debs/",
+            "mkdir -p ~/.cache/deb2appimage/tar/",
+            "curl -sL https://github.com/linuxmint/webapp-manager/releases/download/master.lmde6/packages.tar.gz -o ~/.cache/deb2appimage/tar/packages.tar.gz",
+            "tar -xf ~/.cache/deb2appimage/tar/packages.tar.gz",
+            "cp ./packages/*.deb ~/.cache/deb2appimage/debs/webapp-manager.deb",
+            "rm -rf ./packages"
+        ],
+        "name": "webapp-manager",
+        "version": "linux", 
+        "repoarch": "amd64",
+        "distrorepo": "Debian",
+        "repoversion": "jessie-backports,jessie,jessie",
+        "binarypath": "/usr/bin/webapp-manager",
+        "desktoppath": "/usr/share/applications/webapp-manager.desktop",
+        "iconpath": "/usr/share/icons/hicolor/scalable/apps/webapp-manager.svg",
+        "usewrapper": "true",
+        "postrun": [
+            null
+        ]
+    }
+    ],
+    "apprunconf": [
+    {
+        "setpath": "true",
+        "setlibpath": "true",
+        "setpythonpath": "false",
+        "setpythonhome": "false",
+        "setpythondontwritebytecode": "false",
+        "setxdgdatadirs": "false",
+        "setperllib": "false",
+        "setgsettingsschemadir": "false",
+        "setqtpluginpath": "false",
+        "exec": "/usr/bin/webapp-manager"
+    }
+    ],
+    "authors": [
+    {
+        "type": "Author",
+        "author": "linuxmint",
+        "url": "https://github.com/linuxmint/webapp-manager"
+    },
+    {
+        "type": "AppImage Maintainer",
+        "author": "Sotig",
+        "url": "https://github.com/sotigr"
+    }
+    ]
+}
