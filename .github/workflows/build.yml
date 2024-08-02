@@ -29,5 +29,7 @@ jobs:
       - name: Run a multi-line script
         working-directory: ./
         run: |
+          apt get update
+          apt install fuse
           chmod +x ./deb2appimage.appimage
           ./deb2appimage.appimage -j ./webapp-manager.json -o ./out
