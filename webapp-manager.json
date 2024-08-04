@@ -2,6 +2,7 @@
     "buildinfo": [
     {
         "prerun": [
+            "mkdir -p ./out",
             "mkdir -p ~/.cache/deb2appimage/debs/",
             "mkdir -p ~/.cache/deb2appimage/tar/",
             "curl -sL https://github.com/linuxmint/webapp-manager/releases/download/master.lmde6/packages.tar.gz -o ~/.cache/deb2appimage/tar/packages.tar.gz",
@@ -19,7 +20,7 @@
         "iconpath": "/usr/share/icons/hicolor/scalable/apps/webapp-manager.svg",
         "usewrapper": "true",
         "postrun": [
-            null
+            "cp ~/.cache/deb2appimage/AppDir/webapp-manager.svg ~/.cache/deb2appimage/AppDir/usr/share/icons/webapp-manager.svg"
         ]
     }
     ],
@@ -30,7 +31,7 @@
         "setpythonpath": "false",
         "setpythonhome": "false",
         "setpythondontwritebytecode": "false",
-        "setxdgdatadirs": "false",
+        "setxdgdatadirs": "true",
         "setperllib": "false",
         "setgsettingsschemadir": "false",
         "setqtpluginpath": "false",
